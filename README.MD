@@ -58,61 +58,6 @@ git clone https://github.com/Nexh1/ai-context-injector.git
 - **Chrome Storage API** for local data persistence
 - **Content Scripts** for AI platform integration
 
-## 📁 Project Structure
-```
-ai-context-injector/
-├── manifest.json       # Extension configuration
-├── popup.html          # Extension popup UI
-├── popup.js            # Popup logic
-├── content.js          # Content script for AI platforms
-├── background.js       # Background service worker
-└── icons/              # Extension icons
-```
-
-## 🔧 Development
-
-### Prerequisites
-- Chrome/Chromium browser
-- Basic knowledge of JavaScript
-
-### Local Setup
-```bash
-# Clone the repo
-git clone https://github.com/YOUR_USERNAME/ai-context-injector.git
-cd ai-context-injector
-
-# Load in Chrome (see Installation section above)
-```
-
-### Adding a new AI platform
-
-Edit `content.js` and add your platform to the `platforms` object:
-```javascript
-newplatform: {
-  name: "NewPlatform",
-  match: (host) => host.includes("newplatform.com"),
-  insertContext: (text) => {
-    const editable = document.querySelector("YOUR_SELECTOR");
-    if (!editable) {
-      alert("NewPlatform input not found!");
-      return;
-    }
-    insertFormattedContext(editable, text);
-    editable.dispatchEvent(new InputEvent("input", { bubbles: true }));
-  }
-}
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## 📋 Roadmap
 
 - [ ] Export/Import contexts
@@ -121,18 +66,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [ ] Support for more AI platforms (Perplexity, etc.)
 - [ ] Context templates library
 - [ ] Cloud sync (optional)
+- [ ] Context generator
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Built for the AI community
-- Inspired by the need for reusable AI prompts
-
-## 📧 Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_twitter)
-
-Project Link: [https://github.com/YOUR_USERNAME/ai-context-injector](https://github.com/YOUR_USERNAME/ai-context-injector)
