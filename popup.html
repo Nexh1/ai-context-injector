@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Context Injector</title>
+    <style>
+        body { font-family: sans-serif; width: 300px; padding: 12px; background: #111; color: #eee; }
+        input, textarea { width: 100%; margin: 4px 0; padding: 6px; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff; box-sizing: border-box; }
+        button { margin-top: 6px; width: 100%; background: #007bff; color: white; border: none; padding: 6px; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        ul { padding: 0; list-style: none; }
+        li { background: #222; padding: 8px; border-radius: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+        li button { width: auto; background: #444; padding: 4px 8px; font-size: 12px; margin-left: 4px; }
+        li button.inject { background: #28a745; }
+        li button.inject:hover { background: #218838; }
+        li button.delete { background: #dc3545; }
+        li button.delete:hover { background: #c82333; }
+    </style>
+</head>
+<body>
+    <h2>Saved Contexts</h2>
+    <ul id="context-list"></ul>
+    <h3 id="form-title">Add Context</h3>
+    <input type="text" id="context-name" placeholder="Context name">
+    <textarea id="context-text" rows="4" placeholder="Context text..."></textarea>
+    <div style="display: flex; gap: 8px;">
+        <button id="save-context">Save Context</button>
+        <button id="cancel-edit" style="background: #6c757d; display: none;">Cancel</button>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
